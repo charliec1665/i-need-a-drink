@@ -4,9 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" 
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script defer src="./assets/js/script.js"></script>
+    <title>iNeedADrink</title>
 </head>
 <body>
-    
+  <div class="d-flex flex-column align-items-end min-vh-100 no-gutters">
+    <!-- Shopping list start -->
+    <div id="shopping-list-container" class="d-flex flex-column col-4 justify-content-center">
+      <h2 class="shopping-list text-center border-bottom p-2">Shopping List</h2>
+      <div class="m-1 row">
+          <!-- what I have list start -->
+          <div class="col">
+            <div class="card border">
+              <h4 class="card-header">What I have:</h4>
+              <ul id="wih-list" class="list-group list-group-flush">
+                <button id="ing-btn" class="btn btn-outline-light text-dark font-weight-lighter">
+                  <span class="oi oi-plus"></span> Add ingredient
+                </button>
+              </ul>
+            </div>
+          </div>
+          <!-- what I have list end -->
+          <!-- what I need list start -->
+          <div class="col">
+            <div class="card border">
+              <h4 class="card-header">What I need:</h4>
+              <ul id="win-list" class="list-group list-group-flush">
+                <button id="ing-btn" class="btn btn-outline-light text-dark font-weight-lighter">
+                  <span class="oi oi-plus"></span> Add ingredient
+                </button>
+              </ul>
+            </div>
+          </div>
+          <!-- what I need list end -->
+      </div>
+    </div>
+    <!-- Shopping list end -->
+    <div id="trash" class="d-flex flex-column align-items-end">
+      <span class="oi oi-trash mx-auto mt-2"></span>
+      <p id="trash-instruction" class="p-3">Drop here to remove.</p>
+    </div>
+  </div>
+    <!-- jquery and bootstrap CDNs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

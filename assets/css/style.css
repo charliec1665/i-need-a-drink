@@ -1,0 +1,24 @@
+.shopping-list {
+    font-size: 20px;
+    border-width: 55px;
+}
+
+.card-header {
+    font-size: 16px;
+}
+
+#trash-instruction {
+    font-size: 10px;
+}
+
+#ing-btn {
+    font-size: 14px;
+}
+
+#ing-btn span {
+    color: rgb(182, 182, 110);
+}
+
+#trash span {
+    color: rgb(101, 24, 51);
+}
