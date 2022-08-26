@@ -13,7 +13,7 @@ var createIngredient = function(itemText, itemList) {
 };
 
 // ADD INGREDIENT EVENT LISTENER
-$('.list-group').on('click', '#ing-btn', function() {
+$('.list-group').on('click', 'a', function() {
     var text = $(this)
     .text()
     .trim();
@@ -25,6 +25,24 @@ $('.list-group').on('click', '#ing-btn', function() {
         $(this).replaceWith(textInput);
 
         textInput.trigger('focus');
+    
+    // grab parent elements id
+    var list = $(this)
+    .closest('.list-group')
+    .attr('id');
+    console.log(list);
+    // change button id's so that the lists dont get their wires crossed
+
+
+    // recreate button at bottom of ul
+    var addButton = $('<button id="ing-btn" class="btn btn-outline-light text-dark font-weight-lighter">');
+    var addButtonSpan = $('<span class="oi oi-plus">').text(' Add ingredient');
+    // append to span to button
+    addButton.append(addButtonSpan);
+    
+    // append button to parent
+    
+
 })
 
 // ADD INGREDIENT EVENT ON CHANGE
@@ -49,7 +67,7 @@ $('.list-group').on('blur', 'textarea', function() {
 
     // recreate p element
     var itemLi = $('<li>')
-    .addClass('list-group-item m-1')
+    .addClass('collection-content m-1')
     .text(text);
 
     // replace textarea with p element
