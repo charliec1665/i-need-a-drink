@@ -1,0 +1,134 @@
+html {
+    height: 100%;
+}
+
+/* core site colours */
+:root {
+    --white: white;
+    --teal: #006d5b;
+    --green: #014923;
+    --border-radius: 50px;
+}
+
+/* Universal before after selectors */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* header background color style */
+header {
+    background: var(--green);
+    height: auto;
+    width: 100%;
+}
+
+/* header after effects */
+header::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* logo location and color */
+.logo {
+    font-size: xx-large;
+    float: left;
+    margin: 25px;
+    color: var(--white);
+    font-weight: bolder;
+}
+
+/* top navigation */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li:not(:first-child) {
+    margin-left: 8px;
+}
+
+nav li {
+    display: inline-block;
+    position: relative;
+    padding-top: 10px;
+    margin: 10px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    /* font-weight: bold; */
+}
+
+/* nav bar hover effect color */
+nav ul li a:hover {
+    color: white;
+}
+
+nav ul li a::before {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 250ms;
+}
+
+/* nav list over style */
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+/* main section style */
+main {
+    padding: 40px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* body font style */
+body {
+    font-family: "Barlow Condensed", sans-serif;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* h1 heading styles */
+h1 {
+    text-align: center;
+}
+
+/* h2 heading styles */
+h2 {
+    text-align: center;
+}
+
+/* h3 heading style */
+h3 {
+    text-align: center;
+}
+
+/* paragraph style */
+p {
+    text-align: center;
+    margin: 25px;
+}
