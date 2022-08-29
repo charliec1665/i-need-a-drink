@@ -13,7 +13,8 @@ searchForm.submit(function(event) {
     drinkInput.vall('');
 })
 
-fetch('https:thecocktaildb.com/api/json/v1/1/search.php?s=Margarita')
+function searchDrink(userDrink)
+fetch('https:thecocktaildb.com/api/json/v1/1/search.php?s=' + userDrink)
     .then(function (res){
         return res.json();
     })
