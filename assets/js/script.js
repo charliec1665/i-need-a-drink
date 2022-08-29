@@ -1,4 +1,8 @@
-var items = {};
+var wihList = document.getElementById('wihlist');
+var  items = {
+  wihlist: [],
+  winlist: [],
+};
 
 var createIngredient = function(itemText, itemList) {
     // create elements that make up a shopping list item
@@ -33,7 +37,9 @@ var loadItems = function() {
 }
 
 // ADD INGREDIENT EVENT LISTENER
-$('.list-group').on('click', function() {
+$('.list-group').on('click', function(e) {
+if (!e.target.matches("a")) return
+  console.log(wihList);
     var text = $(this)
     .text()
     .trim();
@@ -42,29 +48,27 @@ $('.list-group').on('click', function() {
         .addClass('form-control')
         .val(text);
 
-        $(this).replaceWith(textInput);
+        $(this).prepend(textInput);
 
         // lets the user automatically start typing rather than having to click twice to type
         textInput.trigger('focus');
 
     console.log($(this));
-
+    console.log(wihList);
     // recreate button at bottom of ul
     var addButton = $('<a id="ing-btn" class="btn light-green lighten-5">');
-    console.log(addButton);
+    // console.log(addButton);
     var addButtonP = $('<p>').text(' Add ingredient');
-    console.log(addButtonP);
+    // console.log(addButtonP);
     var addButtonSpan = $('<span class="oi oi-plus">');
-    console.log(addButtonSpan);
+    // console.log(addButtonSpan);
     // append p to button
     addButton.append(addButtonP);
     // prepend span to p
     addButtonP.prepend(addButtonSpan);
-    
+    console.log(wihList);
     // grab parent elements id
-    var list = $(this)
-    .closest('.list-group')
-    .attr('id');
+    var list = $(this).closest('.list-group').attr('id');
     console.log(list);
 
     // var newList = document.querySelector('#' + list);
@@ -73,7 +77,7 @@ $('.list-group').on('click', function() {
     var itemList = JSON.stringify(list);
     // console.log(itemList);
     var itemList = '#' + list;
-    console.log(itemList);
+    // console.log(itemList);
 
     // stringList = JSON.stringify(itemList);
     // console.log(stringList);
@@ -82,19 +86,23 @@ $('.list-group').on('click', function() {
     // console.log(grabList);
 
     // add button to parent list
-    if (itemList === 'wihlist') {
-        var wihList = $('#wihlist');
-        wihList.append(addButton);
-    } 
-    else {
-        var winList = $('#win-list');
-        winList.append(addButton);
-    }
-})
+    console.log(wihList);
+    // if (list === 'wihlist') {
+    //     var wihList = document.getElementById('wihlist');
+    //     console.log(wihList);
+    //     // wihList.append(addButton);
+    // } 
+    // else {
+    //     var winList = $('#win-list');
+    //     winList.append(addButton);
+    // }
+});
 
 // ADD INGREDIENT EVENT ON CHANGE
 $(document).on('blur', 'textarea', function() {
-    // get textarea's current value
+  console.log($(this)
+  .closest('.collection-content').index());  
+  // get textarea's current value
     var text = $(this)
     .val()
     .trim();
@@ -111,11 +119,24 @@ $(document).on('blur', 'textarea', function() {
     .closest('.collection-content')
     .index();
     console.log(index);
-
+    console.log(items)
+    saveItems();
+    if (index > -1){
+      items[list][index] = text;
+    }else{
+      items[list].push(text)
+    }
     // items is an object, list returns the array for that list, 
     // and index.text returns the text property of the object at that index
-    items[list][index].text = text;
-    saveItems();
+    // items[list][0].text = text;
+
+    console.log(items)
+
+    // items = {
+    //   wihlist: [],
+    //   winlist: [],
+    // };
+    
 
     // recreate li element
     var itemLi = $('<li>')
