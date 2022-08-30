@@ -1,3 +1,4 @@
+
 html {
     height: 100%;
 }
@@ -8,13 +9,6 @@ html {
     --teal: #006d5b;
     --green: #014923;
     --border-radius: 50px;
-}
-
-/* Universal before after selectors */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
 }
 
 /* header background color style */
@@ -38,62 +32,6 @@ header::after {
     margin: 25px;
     color: var(--white);
     font-weight: bolder;
-}
-
-/* top navigation */
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-nav li:not(:first-child) {
-    margin-left: 8px;
-}
-
-nav li {
-    display: inline-block;
-    position: relative;
-    padding-top: 10px;
-    margin: 10px;
-}
-
-nav ul li a {
-    color: var(--white);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    /* font-weight: bold; */
-}
-
-/* nav bar hover effect color */
-nav ul li a:hover {
-    color: white;
-}
-
-nav ul li a::before {
-    content: "";
-    display: block;
-    height: 5px;
-    width: 100%;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    width: 0%;
-    transition: all ease-in-out 250ms;
-}
-
-/* nav list over style */
-nav ul li a:hover::before {
-    width: 100%;
 }
 
 /* main section style */
@@ -131,4 +69,125 @@ h3 {
 p {
     text-align: center;
     margin: 25px;
+}
+
+body {
+    background-color: orange;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Cabin', sans-serif;
+    font-size: 18px;
+}
+
+/* center the button */
+#generate-button {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+/* style the button */
+button {
+    width: 340px;
+    height: 50px;
+    font-size: 24px;
+    color: black;
+    background-color: pink;
+    border: 4px solide black; 
+}
+
+button:hover {
+/*     box-shadow: 5px 5px 10px black; */
+    background-color: white;
+    color: black;
+  
+}
+
+#recipe-card {
+/*   background-color: #efedf4; */
+  width: 70%;
+  height: 100%;
+  justify-content: center;
+  margin: auto;
+/*   box-shadow: 5px 5px 5px black; */
+  padding-bottom: 30px;
+}
+
+#drink-name {
+    text-align: center;
+    margin: 20px 0 20px 0;
+    padding-top: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 1em;
+    /* color: white; */
+    font-family: 'Rammetto One', cursive;
+}
+
+img {
+    width: 25%;
+    height: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    border: 5px solid white;
+}
+
+#image {
+    margin-bottom: 40px;
+/*     padding-left: 20px; */
+
+}
+
+#category, #type, #recipe, #instructions {
+    margin: 0 40px 0 40px;  
+}
+
+#recipe > p {
+    font-weight: bold;
+}
+
+li {
+    list-style-type: none;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+#category-info {
+    text-align: left;
+}
+
+#instructions {
+  padding-bottom: 20px;
+}
+#print-button {
+  background-color: pink;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  width: 100px;
+  font-size: 16px;
+  height: 30px;
+}
+
+#print-button:hover {
+  color: black;
+  background-color: white;
+}
+
+.name-button {
+    height: 30px;
+    width: 100px;
+}
+
+body img {
+    height: 200px;
+    width: 300px;
+
 }
