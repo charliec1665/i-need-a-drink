@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     background-color: orange;
     height: 100%;
@@ -108,3 +109,15 @@ h3 {
   background-color: white;
 }
 
+=======
+.name-button {
+    height: 30px;
+    width: 100px;
+}
+
+body img {
+    height: 200px;
+    width: 300px;
+
+}
+>>>>>>> f42caf4c89cdd27e4baa5175b8d5ac36fa8ac7d4

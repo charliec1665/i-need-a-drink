@@ -1,5 +1,10 @@
 {
+<<<<<<< HEAD
     "liveServer.settings.port": 5501
 } // {
 //     "liveServer.settings.port": 5501
 // }
+=======
+    "liveServer.settings.port": 5503
+}
+>>>>>>> f42caf4c89cdd27e4baa5175b8d5ac36fa8ac7d4
