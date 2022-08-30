@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,56 +34,115 @@
       rel="stylesheet" 
       href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" 
     />
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>iNeedADrink</title>
 </head>
 <body>
-  <div class="container col s4 m12">
-    <!-- Shopping list start -->
-    <div id="shopping-list-container" class="center-align">
-      <h2 class="shopping-list center-align">Shopping List</h2>
-      <div class="divider"></div>
-      <div class="row">
-          <!-- what I have list start -->
-          <div class="col s4 center-align">
-            <div class="card border">
-              <h3 class="list-title">What I have:</h3>
-              <ul id="wihlist" class="list-group card-content collection">
-                <a id="ing-btn" class="btn light-green lighten-5">
-                  <p><span class="oi oi-plus"></span> Add ingredient</p>
-                </a>
-              </ul>
-            </div>
-          </div>
-          <!-- what I have list end -->
-          <!-- what I need list start -->
-          <div class="col s4 center-align">
-            <div class="card border">
-              <h3 class="list-title">What I need:</h3>
-              <ul id="winlist" class="list-group card-content collection">
-                <a id="ing-btn" class="btn light-green lighten-5">
-                  <p><span class="oi oi-plus"></span> Add ingredient</p>
-                </a>
-              </ul>
-            </div>
-          </div>
-          <!-- what I need list end -->
+  <h1>iNeedADrink</h1>
+  <!-- Search By Drink Name -->
+  <form id="search-form">
+    <label for="dname">What Is The Name Of Your Drink?:</label><br>
+    <input type="text" id="drink-name"><br><br>
+    <button id="name-button" class="name-button" type="submit">Enter</button>
+  </form>
+
+  <div id="result-box" class="result-box">
+  <h2 id="result-title" class="result-title">What You Need</h2>
+  
+</div>
+  <form action>
+      <label for="drinkname">Name of your drink?:</label><br>
+      <input type="text" id="drink-names" value=""><br><br>
+      <input id="name-btn" type="submit" value="Submit">
+  </form>
+  <div id="result-box" class="result-box">
+      <div class="container">
+          <ul id="results-list">
+  
+          </ul>
       </div>
+  
+      </ul>
+      <h2 id="result-title" class="result-title"></h2>
+      <p id="result" class="result"> What you need will appear here after your search.</p>
+  </div>
+  <!-- Random Drink Recipe Generator -->
+  <div id="generate-button">
+    <button id="generate">Hit me with your best shot!</button>
+</div>
+<div class="container" id="recipe-card">
+<div class="recipe-item" id="drink-name"></div>
+<div class="recipe-item" id="image"></div>
+<div class="recipe-item" id="category"></div>
+<div class="recipe-item" id="type"></div>
+<div class="recipe-item" id="recipe"><p>Recipe</p>
+    <div id="ingredients">
+        <ul id="ingredients-list"></ul>
     </div>
-    <!-- Shopping list end -->
-    <div id="trash" class="col right-align">
-      <span class="oi oi-trash"></span>
-      <p id="trash-instruction" class="">Drop here to remove.</p>
+</div>
+<div class="recipe-item" id="instructions"></div> 
+<button id="print-button">Print</button>
+</div> 
+
+<p id="result" class="result"></p>
+
+<!-- Shopping Lists -->
+<div class="container col s4 m12">
+  <!-- Shopping list start -->
+  <div id="shopping-list-container" class="center-align">
+    <h2 class="shopping-list center-align">Shopping List</h2>
+    <div class="divider"></div>
+    <div class="row">
+        <!-- what I have list start -->
+        <div class="col s4 center-align">
+          <div class="card border">
+            <h3 class="list-title">What I have:</h3>
+            <ul id="wihlist" class="list-group card-content collection">
+              <a id="ing-btn" class="btn light-green lighten-5">
+                <p><span class="oi oi-plus"></span> Add ingredient</p>
+              </a>
+            </ul>
+          </div>
+        </div>
+        <!-- what I have list end -->
+        <!-- what I need list start -->
+        <div class="col s4 center-align">
+          <div class="card border">
+            <h3 class="list-title">What I need:</h3>
+            <ul id="winlist" class="list-group card-content collection">
+              <a id="ing-btn" class="btn light-green lighten-5">
+                <p><span class="oi oi-plus"></span> Add ingredient</p>
+              </a>
+            </ul>
+          </div>
+        </div>
+        <!-- what I need list end -->
     </div>
   </div>
-    <!-- jquery and bootstrap CDNs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <!-- only kept bootstrap for ease of use with the open-iconic, all css is original or uses materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script  src="./assets/js/script.js"></script>
+  <!-- Shopping list end -->
+  <div id="trash" class="col right-align">
+    <span class="oi oi-trash"></span>
+    <p id="trash-instruction" class="">Drop here to remove.</p>
+  </div>
+</div>
 
+<!-- jquery and bootstrap CDNs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
+<!-- only kept bootstrap for ease of use with the open-iconic, all css is original or uses materialize -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- <script
+src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+crossorigin="anonymous"></script> -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./assets/js/script.js"></script>
 </body>
+    
+   
 </html>
