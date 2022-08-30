@@ -1,86 +1,111 @@
-html {
+/* html {
     height: 100%;
-}
+} */
 
+* {
+    margin: 0;
+    padding: 0;
+}
 /* core site colours */
 :root {
     --white: white;
-    --teal: #006d5b;
-    --green: #014923;
+    --wine: rgb(121, 20, 55);
+    --olive: rgb(182, 182, 110);
     --border-radius: 50px;
 }
 
-/* header background color style */
-header {
-    background: var(--green);
-    height: auto;
+.searchcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 200px;
     width: 100%;
 }
 
+.box {
+    display: flex;
+    height: 200px;
+    width: 33%;
+}
+
+.charlie {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 200px;
+}
+
+/* header background color style */
+/* CHECK THIS OUT */
+/* header { 
+    background: var(--green);
+    height: auto;
+    width: 100%;
+} */
+
 /* header after effects */
-header::after {
+/* header::after {
     content: "";
     display: table;
     clear: both;
-}
+} */
 
 /* logo location and color */
-.logo {
+/* .logo {
     font-size: xx-large;
     float: left;
     margin: 25px;
     color: var(--white);
     font-weight: bolder;
-}
+} */
 
 /* main section style */
-main {
+/* main {
     padding: 40px;
     min-height: 100%;
     display: flex;
     flex-direction: column;
-}
+} */
 
 /* body font style */
-body {
+/* body {
     font-family: "Barlow Condensed", sans-serif;
     min-height: 100%;
     display: flex;
     flex-direction: column;
-}
+} */
 
 /* h1 heading styles */
-h1 {
+/* h1 {
     text-align: center;
-}
+} */
 
 /* h2 heading styles */
-h2 {
+/* h2 {
     text-align: center;
-}
+} */
 
 /* h3 heading style */
-h3 {
+/* h3 {
     text-align: center;
-}
+} */
 
 /* paragraph style */
-p {
+/* p {
     text-align: center;
     margin: 25px;
 }
 
 body {
-    background-color: orange;
+    background-color: var(--white);
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Cabin', sans-serif;
     font-size: 18px;
-}
+} */
 
-/* center the button */
+/* center the button
 #generate-button {
     margin-top: 30px;
     display: flex;
@@ -88,30 +113,30 @@ body {
     justify-content: center;
 } 
 
-/* style the button */
+style the button
 button {
     width: 340px;
     height: 50px;
     font-size: 24px;
-    color: black;
-    background-color: pink;
-    border: 4px solide black; 
+    color: var(--wine);
+    background-color: var(--olive);
+    border: none; 
 }
 
 button:hover {
-/*     box-shadow: 5px 5px 10px black; */
+    box-shadow: 5px 5px 10px black;
     background-color: white;
     color: black;
   
-}
-
+} */
+/* 
 #recipe-card {
-/*   background-color: #efedf4; */
+  background-color: #efedf4;
   width: 70%;
   height: 100%;
   justify-content: center;
   margin: auto;
-/*   box-shadow: 5px 5px 5px black; */
+  box-shadow: 5px 5px 5px black;
   padding-bottom: 30px;
 }
 
@@ -121,9 +146,9 @@ button:hover {
     padding-top: 10px;
     font-family: 'Pacifico', cursive;
     font-size: 1em;
-    /* color: white; */
+    color: white;
     font-family: 'Rammetto One', cursive;
-}
+} */
 
 img {
     width: 25%;
@@ -137,11 +162,10 @@ img {
 
 #image {
     margin-bottom: 40px;
-/*     padding-left: 20px; */
-
+    padding-left: 20px;
 }
 
-#category, #type, #recipe, #instructions {
+/* #category, #type, #recipe, #instructions {
     margin: 0 40px 0 40px;  
 }
 
@@ -159,9 +183,9 @@ h3 {
 
 #category-info {
     text-align: left;
-}
+} */
 
-#instructions {
+/* #instructions {
   padding-bottom: 20px;
 }
 #print-button {
@@ -189,7 +213,7 @@ body img {
     height: 200px;
     width: 300px;
 
-}
+} */
 
 .shopping-list {
     font-size: 22px;
