@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+
+    <head>
+        <title>Random Drink Generator</title>
+       
+        <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    </head>
+    <body>
+        
+        <div id="generate-button">
+            <button id="generate">Hit me with your best shot!</button>
+        </div>
+      <div class="container" id="recipe-card">
+        <div class="recipe-item" id="drink-name"></div>
+        <div class="recipe-item" id="image"></div>
+        <div class="recipe-item" id="category"></div>
+        <div class="recipe-item" id="type"></div>
+        <div class="recipe-item" id="recipe"><p>Recipe</p>
+            <div id="ingredients">
+                <ul id="ingredients-list"></ul>
+            </div>
+        </div>
+        <div class="recipe-item" id="instructions"></div> 
+        <button id="print-button">Print</button>
+      </div> 
 </body>
+    
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    
 </html>
