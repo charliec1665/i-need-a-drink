@@ -42,10 +42,6 @@ form label {
     font-size: 18px;
 }
 
-/* #andy, #quincy {
-    border: 2px solid var(--olive);
-} */
-
 #charlie {
     margin: 60px auto;
 }
@@ -54,108 +50,11 @@ form label {
     margin: 25px auto;
 }
 
-/* header background color style */
-/* CHECK THIS OUT */
-/* header { 
-    background: var(--green);
-    height: auto;
-    width: 100%;
-} */
-
-/* header after effects */
-/* header::after {
-    content: "";
-    display: table;
-    clear: both;
-} */
-
-/* logo location and color */
-/* .logo {
-    font-size: xx-large;
-    float: left;
-    margin: 25px;
-    color: var(--white);
-    font-weight: bolder;
-} */
-
-/* main section style */
-/* main {
-    padding: 40px;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-} */
-
-/* body font style */
-/* body {
-    font-family: "Barlow Condensed", sans-serif;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-} */
-
-/* h1 heading styles */
-/* h1 {
-    text-align: center;
-} */
-
-/* h2 heading styles */
-/* h2 {
-    text-align: center;
-} */
-
-/* h3 heading style */
-/* h3 {
-    text-align: center;
-} */
-
-/* paragraph style */
-/* p {
-    text-align: center;
-    margin: 25px;
-}
-
-body {
-    background-color: var(--white);
-    height: 100%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: 'Cabin', sans-serif;
-    font-size: 18px;
-} */
-
-/* center the button
-#generate-button {
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
-
-style the button
-button {
-    width: 340px;
-    height: 50px;
-    font-size: 24px;
-    color: var(--wine);
-    background-color: var(--olive);
-    border: none; 
-}
-
-button:hover {
-    box-shadow: 5px 5px 10px black;
-    background-color: white;
-    color: black;
-  
-} */
-
 #recipe-card {
   background-color: #efedf4;
   margin: 10px;
   padding: 30px;
 }
-
 
 /* #drink-name {
     text-align: center;
@@ -188,15 +87,7 @@ img {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 16px;
 }
-/* 
-li {
-    list-style-type: none;
-}
 
-h3 {
-    font-size: 1.5em;
-}
- */
 #category-info {
     text-align: left;
 }
@@ -204,12 +95,6 @@ h3 {
 #instructions {
   padding-bottom: 20px;
 }
-/* 
-body img {
-    height: 200px;
-    width: 300px;
-
-} */
 
 .shopping-list {
     font-size: 22px;

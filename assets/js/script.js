@@ -1,8 +1,3 @@
-//var drinkInput = 'Margarita';
-var resultArea = $('.result-box');
-var searchForm = $('#search-form');
-var drinkInput = $('#drink-name')
-
 var wihList = document.getElementById('wihlist');
 var  items = {
   wihlist: [],
@@ -12,17 +7,15 @@ var  items = {
 // API https://www.thecocktaildb.com/api/json/v1/1/random.php
 
 // FIRST SEARCH DRINK START
-searchForm.submit(function(event) {
-    event.preventDefault();
-
-    var nameValue = drinkInput.val();
-    console.log(nameValue);
-
-    drinkInput.vall('');
-})
-
-function searchDrink(userDrink) {
-    fetch('https:thecocktaildb.com/api/json/v1/1/search.php?s=' + userDrink)
+//Click event to collect name of drink
+document.getElementById('name-button').onclick = function(){
+    var userDrink = document.getElementById('drinkname').value;
+        console.log(userDrink); 
+   //Replacing any submission with spaces to an underscore to make the API work correctly
+    var convertdrink = userDrink.trim().replace(' ','_');
+        console.log(convertdrink);
+//API fetch with user inputed drink
+fetch('https:thecocktaildb.com/api/json/v1/1/search.php?s=' + convertdrink)
     .then(function (res){
         return res.json();
     })
@@ -32,19 +25,14 @@ function searchDrink(userDrink) {
         
         const nameHeading = document.createElement('h2');
         nameHeading.textContent = drinkName;
-        document.body.append(nameHeading)
+        $('#drink-name').append(nameHeading);
 
       //Drink Image
         var img = document.createElement('img');
         var drinkImgSrc = data.drinks[0].strDrinkThumb;
         img.setAttribute('src', drinkImgSrc);
-        document.body.append(img);
+        $('#image').append(img);
         console.log(data);
-
-        //Ingredient Heading
-        const ingHeading = document.createElement('h3');
-        ingHeading.textContent  = 'Ingredient(s):'
-        document.body.append(ingHeading);
 
         //Ingredient Listing
         
@@ -56,14 +44,30 @@ function searchDrink(userDrink) {
             return el;
         })
         console.log(nullFilter);
-        var list = document.body;
+        var list = $('#ingredients-list');
             //Add Ingredients to HTML
         nullFilter.forEach((item) => {
             var li = document.createElement('li')
             li.innerText = item;
-            list.appendChild(li);
+            list.append(li);
         });
+
+        $('#instructions').html('<p>' + data.drinks[0]["strInstructions"] +'</p>');
+        $('#recipe-card').show();
+    }); 
+
+    $("#print-button").on('click', function() {
+        window.print();
     });
+};
+//clear drink results
+document.getElementById('clear-button').onclick =function(){
+    // $('#drink-name').remove()
+    // $("#image").remove()
+    // $('#category').remove()
+    // $('#type').remove()
+    // $('#recipe').remove();
+    $("#recipe-card").hide();
 };
 
 
@@ -72,44 +76,37 @@ function searchDrink(userDrink) {
 
 
 // SECOND SEARCH DRINK START
-var drinkIngredient = function() {
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
-    .then(function (res) {
-        return res.json();
-    })
-    .then(function (data) {
-        //Drink Name Heading
-        var drinkName = data.drinks[0].strDrink;
-        const nameHeader = document.createElement('h2');
-        nameHeader.textContent = drinkName;
-        document.body.append(nameHeader)
-        //Drink Image
-        var img = document.createElement('img');
-        var drinkImgSrc = data.drinks[0].strDrinkThumb;
-        img.setAttribute('src', drinkImgSrc);
-        document.body.append(img);
-        console.log(data);
-        //Ingredient Heading
-        const ingHeading = document.createElement('h3');
-        ingHeading.textContent = 'Ingredient(s):'
-        document.body.append(ingHeading);
-        //Ingredient Listing
-        //ingredient Array
-        var ingarray = [data.drinks[0].strIngredient1, data.drinks[0].strIngredient2, data.drinks[0].strIngredient3, data.drinks[0].strIngredient4, data.drinks[0].strIngredient5, data.drinks[0].strIngredient6, data.drinks[0].strIngredient7, data.drinks[0].strIngredient8, data.drinks[0].strIngredient9, data.drinks[0].strIngredient10, data.drinks[0].strIngredient11, data.drinks[0].strIngredient12, data.drinks[0].strIngredient13, data.drinks[0].strIngredient14, data.drinks[0].strIngredient15];
-        //Filter out "null" ingredients
-        var nullFilter = ingarray.filter(function (el) {
-            return el;
+document.getElementById('ing-button').onclick = function(){
+    var userIng = document.getElementById('ing-name').value;
+        console.log(userIng);
+   //Replacing any submission with spaces to an underscore to make the API work correctly
+    var convertIng = userIng.trim().replace(' ','_');
+        console.log(convertIng);
+    //API fetch with user inputed drink
+    fetch('https:thecocktaildb.com/api/json/v1/1/search.php?i=' + convertIng)
+        .then(function (res){
+            return res.json();
         })
-        console.log(nullFilter);
-        var list = document.body;
-        //Add Ingredients to HTML
-        nullFilter.forEach((item) => {
-            var li = document.createElement('li')
-            li.innerText = item;
-            list.appendChild(li);
-        });
+        .then(function (data) {
+            console.log(data);
+            //Drink Name Heading
+            var ingName = data.ingredients[0].strIngredient;
+            console.log(ingName);
+            const ingHeading = document.createElement('h2');
+            console.log(ingHeading);
+            ingHeading.textContent = ingName;
+            $('#drink-name').append(ingHeading);
+            //Ingredient Discription
+            var ingDesc = data.ingredients[0].strDescription;
+            console.log(ingDesc);
+            const ingdesc = document.createElement('p');
+            console.log(ingdesc);
+            ingdesc.textContent = ingDesc;
+            $('#instructions').append(ingDesc);
+
+            $('#recipe-card').show();
     });
-}
+};
     
 
 
@@ -264,6 +261,15 @@ $(document).ready(function() {
         // replace textarea with p element
         $(this).replaceWith(itemLi);
     });
+
+    //clear list results
+
+$('#trash').on('click', function(e) {
+    // if the target of click does not match a button element, return
+    if (!e.target.matches("a" && "span" && "p")) return;
+    
+    $('#collection-content').remove();
+});
     
     // // MAKE LIST ITEMS DRAGGABLE
     // $('.card .list-group').sortable({
