@@ -1,20 +1,12 @@
-//var drinkInput = 'Margarita';
-var resultArea = $('.result-box');
-var searchForm = $('#search-form');
-var drinkInput = $('#drink-name')
-
-
-searchForm.submit(function(event) {
-    event.preventDefault();
-
-    var nameValue = drinkInput.val();
-    console.log(nameValue);
-
-    drinkInput.vall('');
-})
-
-function searchDrink(userDrink)
-fetch('https:thecocktaildb.com/api/json/v1/1/search.php?s=' + userDrink)
+//Click event to collect name of drink
+document.getElementById('name-button').onclick = function(){
+    var userDrink = document.getElementById('drink-name').value;
+        console.log(userDrink); 
+   //Replacing any submission with spaces to an underscore to make the API work correctly
+    var convertdrink = userDrink.trim().replace(' ','_');
+        console.log(convertdrink);
+//API fetch with user inputed drink
+fetch('https:thecocktaildb.com/api/json/v1/1/search.php?s=' + convertdrink)
     .then(function (res){
         return res.json();
     })
@@ -55,6 +47,12 @@ fetch('https:thecocktaildb.com/api/json/v1/1/search.php?s=' + userDrink)
             li.innerText = item;
             list.appendChild(li);
         });
-        
-
-    });
+    }); 
+};
+//clear drink results
+document.getElementById('clear-button').onclick =function(){
+    $('h2').remove()
+    $('img').remove()
+    $('h3').remove()
+    $('li').remove()
+};
