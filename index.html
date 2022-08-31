@@ -27,16 +27,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" 
     />
     <link 
-      href="https://fonts.googleapis.com/css?family=Rammetto+One" 
-      rel="stylesheet"
-    />
-    <link 
-      href="https://fonts.googleapis.com/css?family=Pacifico" 
-      rel="stylesheet"
-    />
-    <link 
-      href="https://fonts.googleapis.com/css?family=Cabin" 
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Alegreya+Sans:wght@300;400&display=swap" 
+    rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
@@ -44,51 +36,78 @@
 
 </head>
 <body>
-<div class="container d-flex flex">
-  <div class="row">
-    <h1 class="center-align">iNeedADrink</h1>
+<nav class="pink darken-3"></nav>
 
+<header>
+  <div class="container" id="header">
+    <h1 class="center-align">iNeedADrink</h1>
+    <p class="center-align">Welcome! Search for a cocktail recipe below, either by drink name or an ingredient you may already have in the fridge.</p>
+  </div>
+</header>
+
+<!-- SEARCH FORMS HERE -->
+<div class="container">
+  <div class="row">
+    
     <!-- ANDY'S SEARCH -->
-    <div id="andy">
-      <div class="col 4">
+      <div id="andy" class="col s6">
         <form class="input-field" id="search-form">
-          <label for="dname">What Is The Name Of Your Drink?:</label><br>
+          <label for="dname">Name Of Your Drink:</label><br>
           <input type="text" id="drink-name"><br><br>
-          <button id="name-button" class="name-button" type="submit">Enter</button>
+          <a id="name-button" class="name-button btn lime darken-2" type="submit">
+            <p>Enter</p>
+          </a>
         </form>
     
         <div id="result-box" class="result-box"></div>
         <!-- <h2 id="result-title" class="result-title">What You Need</h2> -->
       </div>
-    
-    </div>
   
 
     <!-- QUINCY'S SEARCH -->
-    <!-- </div> -->
-    <div id="quincy" class="col 4">
-      <form action>
-        <label for="drinkname">Name of your drink?:</label><br>
+    <div id="quincy" class="col s6">
+      <form class="input-field" id="quincy-form">
+        <label for="drinkname">Ingredient:</label><br>
         <input type="text" id="drink-names" value=""><br><br>
-        <input id="name-btn" type="submit" value="Submit">
-        </form>
+        <a id="name-btn" class="btn lime darken-2" type="submit" value="Submit">
+          <p>Submit</p>
+        </a>
+      </form> 
+    </div>
+    <div class="divider pink darken-3"></div>
+
+  </div>
+</div>
+
+
+<!-- FORM RESULTS DISPLAY HERE -->
+<div class="container" id="result-container">
+  <div class="row">
+    <div class="col s6 offset-s3">
       <div id="result-box" class="result-box">
         <div class="container">
-            <ul id="results-list"></ul>
+            <ul id="results-list" class="center-align"></ul>
         </div>
-        <h2 id="result-title" class="result-title"></h2>
-        <p id="result" class="result"> What you need will appear here after your search.</p>
+        <h2 id="result-title" class="result-title center-align"></h2>
+        <p id="result" class="result center-align"></p>
       </div>
     </div>
- 
+  </div>
+</div>
 
-    <!-- Random Drink Recipe Generator -->
+<!-- RANDOM GENERATOR HERE -->
+<div class="row">
     <!-- THINH'S SEARCH -->
-    <div id="thinh" class="col 4">
-      <div id="generate-button">
-        <button id="generate">Hit me with your best shot!</button>
+    <div id="thinh" class="col s4 offset-s4">
+      <div class="container">
+        <div class="gen-info center-align">
+          <p>OR if you're feeling frisky and don't know what you'd like, or you'd like to try something new:</p>
+        </div>
       </div>
-      <div class="container" id="recipe-card">
+      <div id="generate-button" class="center-align">
+        <button id="generate" class="btn lime darken-2">Hit me with your best shot!</button>
+      </div>
+      <div class="container1" id="recipe-card">
         <div class="recipe-item" id="drink-name"></div>
         <div class="recipe-item" id="image"></div>
         <div class="recipe-item" id="category"></div>
@@ -100,57 +119,68 @@
           </div>
         </div>
         <div class="recipe-item" id="instructions"></div> 
-        <button id="print-button">Print</button>
+        <a id="print-button" class="btn lime darken-2">Print</a>
       </div> 
 
       <p id="result" class="result"></p>  
     </div>
-  </div>
+</div>
 
-
-  <!-- CHARLIE'S SHOPPING LIST -->
-  <div id="charlie">
-    <div class="col s4 m12">
-      <!-- Shopping list start -->
-      <div id="shopping-list-container" class="center-align">
-        <h2 class="shopping-list center-align">Shopping List</h2>
-        <div class="divider"></div>
-        <div class="row">
-          <!-- what I have list start -->
-          <div class="col s4 center-align">
-            <div class="card border">
-              <h3 class="list-title">What I have:</h3>
-              <ul id="wihlist" class="list-group card-content collection">
-                <a id="ing-btn" class="btn light-green lighten-5">
-                  <p><span class="oi oi-plus"></span> Add ingredient</p>
-                </a>
-              </ul>
+<div class="container">
+  <div class="row">
+    <!-- CHARLIE'S SHOPPING LIST -->
+    <div id="charlie">
+      <div class="col s12 lists">
+        <!-- Shopping list start -->
+        <div id="shopping-list-container" class="center-align">
+          <h2 class="shopping-list center-align">Shopping List</h2>
+          <div class="divider pink darken-3"></div>
+          <div class="row lists">
+            <!-- what I have list start -->
+            <div class="col s4 offset-s2 center-align">
+              <div class="card border">
+                <h3 class="list-title">What I have:</h3>
+                <ul id="wihlist" class="list-group card-content collection">
+                  <a id="ing-btn" class="btn lime darken-2">
+                   <p><span class="oi oi-plus"></span> Add ingredient</p>
+                  </a>
+                </ul>
+              </div>
             </div>
-          </div>
-          <!-- what I have list end -->
-          <!-- what I need list start -->
-          <div class="col s4 center-align">
-            <div class="card border">
-              <h3 class="list-title">What I need:</h3>
-              <ul id="winlist" class="list-group card-content collection">
-                <a id="ing-btn" class="btn light-green lighten-5">
-                  <p><span class="oi oi-plus"></span> Add ingredient</p>
-                </a>
-              </ul>
+            <!-- what I have list end -->
+            <!-- what I need list start -->
+            <div class="col s4 center-align">
+              <div class="card border">
+                <h3 class="list-title">What I need:</h3>
+                <ul id="winlist" class="list-group card-content collection">
+                  <a id="ing-btn" class="btn lime darken-2">
+                    <p><span class="oi oi-plus"></span> Add ingredient</p>
+                  </a>
+                </ul>
+              </div>
             </div>
+            <!-- what I need list end -->
           </div>
-          <!-- what I need list end -->
         </div>
-      </div>
-      <!-- Shopping list end -->
-      <div id="trash" class="col right-align">
-        <span class="oi oi-trash"></span>
-        <p id="trash-instruction" class="">Drop here to remove.</p>
+        <!-- Shopping list end -->
+        <div id="trash" class="col right">
+          <span class="oi oi-trash"></span>
+          <p id="trash-instruction" class="right">Clear lists.</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
+  
 
+<!-- FOOTER -->
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <div class="container pink darken-3">
+      <p class="white-text">Made by the Wind-Hawks: Andy, Quincy, Thinh, and Charlie.</p>
+    </div>
+  </div>
+</footer>
 
 <!-- jquery and bootstrap CDNs -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -167,5 +197,4 @@ crossorigin="anonymous"></script>
 <script src="./assets/js/script.js"></script>
 
 </body>
-
 </html>

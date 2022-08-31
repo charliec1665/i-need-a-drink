@@ -1,10 +1,7 @@
-/* html {
-    height: 100%;
-} */
-
 * {
     margin: 0;
     padding: 0;
+    color: var(--wine);
 }
 /* core site colours */
 :root {
@@ -14,24 +11,47 @@
     --border-radius: 50px;
 }
 
-.searchcontainer{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    height: 200px;
-    width: 100%;
+nav {
+    color: var(--wine);
 }
 
-.box {
-    display: flex;
-    height: 200px;
-    width: 33%;
+a {
+    margin: 15px 0;
+    background-color: var(--olive);
 }
 
-.charlie {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 200px;
+#header {
+    color: var(--wine);
+    font-family: 'Abril Fatface', serfif;
+    font-size: 18px;
+    margin: 25px auto;
+    padding-bottom: 25px;
+    border-bottom: 2px solid var(--olive);
+}
+
+body p {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+form label {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.gen-info p {
+    padding: 20px;
+    font-size: 18px;
+}
+
+/* #andy, #quincy {
+    border: 2px solid var(--olive);
+} */
+
+#charlie {
+    margin: 60px auto;
+}
+
+.lists {
+    margin: 25px auto;
 }
 
 /* header background color style */
@@ -129,50 +149,46 @@ button:hover {
     color: black;
   
 } */
-/* 
+
 #recipe-card {
   background-color: #efedf4;
-  width: 70%;
-  height: 100%;
-  justify-content: center;
-  margin: auto;
-  box-shadow: 5px 5px 5px black;
-  padding-bottom: 30px;
+  margin: 10px;
+  padding: 30px;
 }
 
-#drink-name {
+
+/* #drink-name {
     text-align: center;
-    margin: 20px 0 20px 0;
+    margin: 20px 0;
     padding-top: 10px;
-    font-family: 'Pacifico', cursive;
-    font-size: 1em;
-    color: white;
-    font-family: 'Rammetto One', cursive;
-} */
+    font-size: 22px;
+    color: var(--wine);
+    font-family: 'Abril Fatface', serif;
+}  */
 
 img {
-    width: 25%;
-    height: 25%;
+    width: 100%;
+    height: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-    border: 5px solid white;
+    padding: 30px 0;
+    margin-top: 45px;
 }
 
-#image {
-    margin-bottom: 40px;
-    padding-left: 20px;
+#category, #type, #recipe, #instructions {
+    margin: 15px 0;
+    font-size: 16px;
 }
 
-/* #category, #type, #recipe, #instructions {
-    margin: 0 40px 0 40px;  
+#recipe p {
+    font-family: 'Abril Fatface', serif;
+    font-size: 18px;
 }
 
-#recipe > p {
-    font-weight: bold;
+#ingredients-list {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 16px;
 }
-
+/* 
 li {
     list-style-type: none;
 }
@@ -180,35 +196,15 @@ li {
 h3 {
     font-size: 1.5em;
 }
-
+ */
 #category-info {
     text-align: left;
-} */
+}
 
-/* #instructions {
+#instructions {
   padding-bottom: 20px;
 }
-#print-button {
-  background-color: pink;
-  display: flex;
-  margin: auto;
-  justify-content: center;
-  text-align: center;
-  width: 100px;
-  font-size: 16px;
-  height: 30px;
-}
-
-#print-button:hover {
-  color: black;
-  background-color: white;
-}
-
-.name-button {
-    height: 30px;
-    width: 100px;
-}
-
+/* 
 body img {
     height: 200px;
     width: 300px;
@@ -217,32 +213,43 @@ body img {
 
 .shopping-list {
     font-size: 22px;
+    font-family: 'Abril Fatface', serif;
     border-width: 55px;
 }
 
-/* .card {
-    align-items: center;
-} */
-
 .list-title {
     padding-top: 15px;
+    font-size: 20px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 700;
+}
+
+.card li {
+    font-family: 'Alegreya Sans', sans-serif;
     font-size: 18px;
 }
 
 a p {
     font-size: 12px;
-    color:  rgb(97, 6, 38);
+    font-family: 'Alegreya Sans', sans-serif;
+    color: var(--white);
 }
 
 a p span {
-    color: rgb(182, 182, 110);
+    color: var(--wine);
 }
 
 #trash-instruction {
-    font-size: 10px;
+    font-size: 12px;
+    font-family: 'Alegreya Sans', sans-serif;
 }
 
 #trash span {
-    color: rgb(121, 20, 55);
+    color: var(--wine);
     text-align: center;
+}
+
+#trash p {
+    padding-top: 5px;
+    padding-left: 10px;
 }

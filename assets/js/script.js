@@ -206,14 +206,14 @@ $(document).ready(function() {
         // if the target of click does not match a button element, return
         if (!e.target.matches("a" && "span" && "p")) return;
 
-        var text = $(this)
-        .text()
-        .trim();
+        // var text = $(this)
+        // .text()
+        // .trim();
         
         // creates the text input area
         var textInput = $('<textarea>')
-            .addClass('form-control')
-            .val(text);
+            .addClass('form-control');
+            // .val(text);
     
             $(this).prepend(textInput);
     
@@ -265,69 +265,69 @@ $(document).ready(function() {
         $(this).replaceWith(itemLi);
     });
     
-    // MAKE LIST ITEMS DRAGGABLE
-    $('.card .list-group').sortable({
-        connectWith: $('.card .list-group'),
-        scroll: false,
-        tolerance: 'pointer',
-        helper: 'clone',
-        activate: function(event) {
-            $(this).addClass('dropover');
-            $('#trash').addClass('trash-drag');
-        },
-        deactivate: function(event) {
-            $(this).removeClass('dropover');
-            $('#trash').removeClass('trash-drag');
-        },
-        over: function(event) {
-            $(event.target).addClass('dropover-active');
-        },
-        out: function(event) {
-            $(event.target).removeClass('dropover-active');
-        },
-        update: function(event) {
-            // array to store item data in
-            var tempArr = [];
+    // // MAKE LIST ITEMS DRAGGABLE
+    // $('.card .list-group').sortable({
+    //     connectWith: $('.card .list-group'),
+    //     scroll: false,
+    //     tolerance: 'pointer',
+    //     helper: 'clone',
+    //     activate: function(event) {
+    //         $(this).addClass('dropover');
+    //         $('#trash').addClass('trash-drag');
+    //     },
+    //     deactivate: function(event) {
+    //         $(this).removeClass('dropover');
+    //         $('#trash').removeClass('trash-drag');
+    //     },
+    //     over: function(event) {
+    //         $(event.target).addClass('dropover-active');
+    //     },
+    //     out: function(event) {
+    //         $(event.target).removeClass('dropover-active');
+    //     },
+    //     update: function(event) {
+    //         // array to store item data in
+    //         var tempArr = [];
     
-            // loop over current set of children in sortable list
-            $(this).children().each(function() {
-                var text = $(this)
-                    .find('li')
-                    .text()
-                    .trim();
+    //         // loop over current set of children in sortable list
+    //         $(this).children().each(function() {
+    //             var text = $(this)
+    //                 .find('li')
+    //                 .text()
+    //                 .trim();
                 
-                // add item data to the array as an object
-                tempArr.push({
-                    text: text
-                });
-            });
+    //             // add item data to the array as an object
+    //             tempArr.push({
+    //                 text: text
+    //             });
+    //         });
     
-            console.log(tempArr);
+    //         console.log(tempArr);
     
-            // trim down list's ID to match object property
-            var arrName = $(this)
-                .attr('id');
+    //         // trim down list's ID to match object property
+    //         var arrName = $(this)
+    //             .attr('id');
             
-            // update array on tasks object and save
-            items[arrName] = tempArr;
-            saveItems();
-        }
-    })
+    //         // update array on tasks object and save
+    //         items[arrName] = tempArr;
+    //         saveItems();
+    //     }
+    // })
     
-    // remove item by dragging
-    $('#trash').droppable({
-        accept: '.card .collection-content',
-        tolerance: 'touch',
-        drop: function(event, ui) {
-          ui.draggable.remove();
-        },
-        over: function(event, ui) {
-          $('#trash').addClass('trash-active');
-        },
-        out: function(event, ui) {
-          $('#trash').removeClass('trash-active');
-        }
-      });
+    // // remove item by dragging
+    // $('#trash').droppable({
+    //     accept: '.card .collection-content',
+    //     tolerance: 'touch',
+    //     drop: function(event, ui) {
+    //       ui.draggable.remove();
+    //     },
+    //     over: function(event, ui) {
+    //       $('#trash').addClass('trash-active');
+    //     },
+    //     out: function(event, ui) {
+    //       $('#trash').removeClass('trash-active');
+    //     }
+    //   });
     
     // load items for the first time
     loadItems();
