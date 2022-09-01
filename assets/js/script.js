@@ -15,7 +15,7 @@ document.getElementById('name-button').onclick = function(){
     var convertdrink = userDrink.trim().replace(' ','_');
         console.log(convertdrink);
 //API fetch with user inputed drink
-fetch('https:thecocktaildb.com/api/json/v1/1/search.php?s=' + convertdrink)
+fetch('https://thecocktaildb.com/api/json/v1/1/search.php?s=' + convertdrink)
     .then(function (res){
         return res.json();
     })
@@ -62,11 +62,6 @@ fetch('https:thecocktaildb.com/api/json/v1/1/search.php?s=' + convertdrink)
 };
 //clear drink results
 document.getElementById('clear-button').onclick =function(){
-    // $('#drink-name').remove()
-    // $("#image").remove()
-    // $('#category').remove()
-    // $('#type').remove()
-    // $('#recipe').remove();
     $("#recipe-card").hide();
 };
 
@@ -83,7 +78,7 @@ document.getElementById('ing-button').onclick = function(){
     var convertIng = userIng.trim().replace(' ','_');
         console.log(convertIng);
     //API fetch with user inputed drink
-    fetch('https:thecocktaildb.com/api/json/v1/1/search.php?i=' + convertIng)
+    fetch('https://thecocktaildb.com/api/json/v1/1/search.php?i=' + convertIng)
         .then(function (res){
             return res.json();
         })
