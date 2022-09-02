@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--wine);
+}
+/* core site colours */
+:root {
+    --white: white;
+    --wine: rgb(121, 20, 55);
+    --olive: rgb(182, 182, 110);
+    --border-radius: 50px;
+}
+
+nav {
+    color: var(--wine);
+}
+
+a {
+    margin: 15px 0;
+    background-color: var(--olive);
+}
+
+#header {
+    color: var(--wine);
+    font-family: 'Abril Fatface', serfif;
+    font-size: 18px;
+    margin: 25px auto;
+    padding-bottom: 25px;
+    border-bottom: 2px solid var(--olive);
+}
+
+body p {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+form label {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.gen-info p {
+    padding: 20px;
+    font-size: 18px;
+}
+
+#charlie {
+    margin: 60px auto;
+}
+
+.lists {
+    margin: 25px auto;
+}
+
+#recipe-card {
+  background-color: #efedf4;
+  margin: 10px;
+  padding: 30px;
+}
+
+/* #drink-name {
+    text-align: center;
+    margin: 20px 0;
+    padding-top: 10px;
+    font-size: 22px;
+    color: var(--wine);
+    font-family: 'Abril Fatface', serif;
+}  */
+
+img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 30px 0;
+    margin-top: 45px;
+}
+
+#category, #type, #recipe, #instructions {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+#recipe p {
+    font-family: 'Abril Fatface', serif;
+    font-size: 18px;
+}
+
+#ingredients-list {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 16px;
+}
+
+#category-info {
+    text-align: left;
+}
+
+#instructions {
+  padding-bottom: 20px;
+}
+
+.shopping-list {
+    font-size: 22px;
+    font-family: 'Abril Fatface', serif;
+    border-width: 55px;
+}
+
+.list-title {
+    padding-top: 15px;
+    font-size: 20px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 700;
+}
+
+.card li {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 18px;
+}
+
+a p {
+    font-size: 12px;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: var(--white);
+}
+
+a p span {
+    color: var(--wine);
+}
+
+#trash-instruction {
+    font-size: 12px;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+#trash span {
+    color: var(--wine);
+    text-align: center;
+}
+
+#trash p {
+    padding-top: 5px;
+    padding-left: 10px;
+}

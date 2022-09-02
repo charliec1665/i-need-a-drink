@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" 
+    />
+    <link 
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Alegreya+Sans:wght@300;400&display=swap" 
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>iNeedADrink</title>
+
+</head>
+<body>
+<nav class="pink darken-3"></nav>
+
+<header>
+  <div class="container" id="header">
+    <h1 class="center-align">iNeedADrink</h1>
+    <p class="center-align">Welcome! Search for a cocktail recipe below, either by drink name or an ingredient you may already have in the fridge.</p>
+  </div>
+</header>
+
+<!-- SEARCH FORMS HERE -->
+<div class="container">
+  <div class="row">
+    
+    <!-- ANDY'S SEARCH -->
+      <div id="andy" class="col s6">
+        <form class="input-field" id="search-form">
+          <label for="dname">Name Of Your Drink:</label><br>
+          <input type="text" id="drinkname"><br><br>
+          <a id="name-button" class="name-button btn lime darken-2" type="submit">
+            <p>Submit</p>
+          </a>
+          <!-- <a id="clear-button" class="clear-button btn lime darken-2" type="submit">
+            <p>Clear</p>
+          </a> -->
+        </form>
+    
+        <div id="result-box" class="result-box"></div>
+      </div>
+  
+
+    <!-- QUINCY'S SEARCH -->
+    <div id="quincy" class="col s6">
+      <form class="input-field" id="quincy-form">
+        <label>Ingredient:</label><br>
+        <input type="text" id="ing-name"><br><br>
+        <a id="ing-button" class="btn lime darken-2" type="submit" value="Submit">
+          <p>Submit</p>
+        </a>
+      </form> 
+    </div>
+
+    <!-- <div class="divider pink darken-3"></div> -->
+
+  </div>
+</div>
+
+<!-- RANDOM GENERATOR HERE -->
+<div class="row">
+    <!-- THINH'S SEARCH -->
+    <div id="thinh" class="col s4 offset-s4">
+      <div class="container">
+        <div class="gen-info center-align">
+          <p>OR if you're feeling frisky and don't know what you'd like, or you'd like to try something new:</p>
+        </div>
+      </div>
+      <div id="generate-button" class="center-align">
+        <button id="generate" class="btn lime darken-2">Hit me with your best shot!</button>
+      </div>
+      <a id="clear-button" class="clear-button btn lime darken-2" type="submit">
+        <p>Clear</p>
+      </a>
+
+      <!-- ALL RESULTS DISPLAY HERE -->
+      <div class="container1" id="recipe-card">
+        <div class="recipe-item" id="drink-name"></div>
+        <div class="recipe-item" id="image"></div>
+        <div class="recipe-item" id="category"></div>
+        <div class="recipe-item" id="type"></div>
+        <div class="recipe-item" id="recipe">
+          <p>Recipe</p>
+          <div id="ingredients">
+              <ul id="ingredients-list"></ul>
+          </div>
+        </div>
+        <div class="recipe-item" id="instructions"></div> 
+        <a id="print-button" class="btn lime darken-2">Print</a>
+      </div> 
+
+      <p id="result" class="result"></p>  
+    </div>
+</div>
+
+<!-- CHARLIE'S SHOPPING LIST -->
+<div class="container">
+  <div class="row">
+    <div id="charlie">
+      <div class="col s12 lists">
+        <!-- Shopping list start -->
+        <div id="shopping-list-container" class="center-align">
+          <h2 class="shopping-list center-align">Shopping List</h2>
+          <div class="divider pink darken-3"></div>
+          <div class="row lists">
+            <!-- what I have list start -->
+            <div class="col s4 offset-s2 center-align">
+              <div class="card border">
+                <h3 class="list-title">What I have:</h3>
+                <ul id="wihlist" class="list-group card-content collection">
+                  <a id="ing-btn" class="btn lime darken-2">
+                   <p><span class="oi oi-plus"></span> Add ingredient</p>
+                  </a>
+                </ul>
+              </div>
+            </div>
+            <!-- what I have list end -->
+            <!-- what I need list start -->
+            <div class="col s4 center-align">
+              <div class="card border">
+                <h3 class="list-title">What I need:</h3>
+                <ul id="winlist" class="list-group card-content collection">
+                  <a id="ing-btn" class="btn lime darken-2">
+                    <p><span class="oi oi-plus"></span> Add ingredient</p>
+                  </a>
+                </ul>
+              </div>
+            </div>
+            <!-- what I need list end -->
+          </div>
+        </div>
+        <!-- Shopping list end -->
+        <div id="trash" class="col right">
+          <a id='trash-btn' class="btn lime darken-2" type="submit" name="action">
+            <span class="oi oi-trash"></span>
+            <p id="trash-instruction" class="right">Clear lists.</p>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <div class="container pink darken-3">
+      <p class="white-text">Made by the Wind-Hawks: Andy, Quincy, Thinh, and Charlie.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- jquery and bootstrap CDNs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
+<!-- only kept bootstrap for ease of use with the open-iconic, all css is original or uses materialize -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script
+src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+crossorigin="anonymous"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./assets/js/script.js"></script>
+
+</body>
+</html>
